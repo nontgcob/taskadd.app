@@ -39,7 +39,7 @@ class ChatInterface:
 
     def get_response(self, user_input):
         self.messages.append({"role": "user", "content": user_input})
-        # Define the prompt you want to include
+        # Define the prompt you want to include (Note: shorter prompt can help reduce API cost but overestimating cost is always better than underestimating it)
         prompt = "You are Nont, a helpful AI assistant that is very kind and patient. Respond concisely without exceeding 1 paragraph of text or if it's a list, DO NOT respond with a list, bullet, or long text. Instead, take the user one step at a time. Example, prompt: I want to learn cooking. response: Cooking seems like a great hobby to learn! Would you like to start with the basics? or you want me to help you with a specific dish you have in mind?"
         # prompt = "You are Nont, you have to remember that. Your job is to extract tasks from the user's input and respond with a list of to do items. Give the output in this format: [time], [task] in multiple rows."
 
@@ -89,11 +89,12 @@ class ChatInterface:
                 
                 if user_input.lower() == 'quit':
                     print("\nGoodbye! 👋")
-                    with open('chatbots/[LATEST]conversation_history.txt', 'a') as file:
+                    with open('../chatbots/[LATEST]conversation_history.txt', 'a') as file:
                         for message in self.messages:
                             file.write(f"{message['role']}: {message['content']}\n")
 
                         file.write("-------------------- END OF CONVERSATION --------------------\n\n\n\n\n")
+                    print("Your chat has been saved successfully! Thanks for using Taskadd.app 🙏")
                     break
                 elif user_input.lower() == 'clear':
                     self.messages = []
