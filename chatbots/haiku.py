@@ -93,7 +93,7 @@ class ChatInterface:
                         for message in self.messages:
                             file.write(f"{message['role']}: {message['content']}\n")
 
-                        file.write("-------------------- END OF CONVERSATION --------------------\n\n\n\n\n")
+                        file.write("\n\n\n\n\n-------------------- END OF CONVERSATION --------------------\n\n\n\n\n")
                     print("Your chat has been saved successfully! Thanks for using Taskadd.app 🙏")
                     break
                 elif user_input.lower() == 'clear':
