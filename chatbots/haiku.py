@@ -1,15 +1,20 @@
-!pip install anthropic
+# !pip install anthropic
 import anthropic
 import os
 from datetime import datetime
 import time
 import threading
 import sys
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 class ChatInterface:
     def __init__(self):
         # Initialize the client
         self.api_key = os.getenv('ANTHROPIC_API_KEY')
+        # Access the API key
         if not self.api_key:
             self.api_key = input("Please enter your Anthropic API key: ")
         self.client = anthropic.Client(api_key=self.api_key)
@@ -41,16 +46,16 @@ class ChatInterface:
         # Add the prompt as the first system message if it's not already included
         if not self.messages:
             self.messages.append({"role": "system", "content": prompt})
+        print("----- -----", self.messages)
 
-        # Add the user's message
-        self.messages.append({"role": "user", "content": user_input})
-        
         try:
             # Start typing animation
             self.typing_animation_active = True
             threading.Thread(target=self.display_typing_animation, daemon=True).start()
 
             # Get response from Claude
+            print(self)
+            print(self.messages)
             response = self.client.messages.create(
                 model="claude-3-haiku-20240307",
                 # max_tokens=1000, # a generous amount of tokens, but this waste too much tokens (the more tokens we use, the more money we pay)
@@ -84,6 +89,11 @@ class ChatInterface:
                 
                 if user_input.lower() == 'quit':
                     print("\nGoodbye! 👋")
+                    with open('chatbots/[LATEST]conversation_history.txt', 'a') as file:
+                        for message in self.messages:
+                            file.write(f"{message['role']}: {message['content']}\n")
+
+                        file.write("-------------------- END OF CONVERSATION --------------------\n\n\n\n\n")
                     break
                 elif user_input.lower() == 'clear':
                     self.messages = []
