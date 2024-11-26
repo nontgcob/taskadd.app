@@ -1,74 +1,62 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat page</title>
+    <!-- Link the CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js">
+    </script>
+    
+        
+    </script>
+</head>
+<body style="background-color: pink; position: fixed; z-index: 0;">
+    <div class="chat">
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    
+    <div class="greet_div">
+       <h1 style="color: white; padding-left: 30px;"> &#x1F44B; Hello , name</h1>
+    
+       <p style="color:white; padding-left: 30px; size: 10px;">Welcome to task add</p>
+    
+       <div class="button_sidebar">
+           <div><button class="plan_with_ai">Plan with AI</button></div>
+           <div><button class="your_todo">Your to do</button></div>
+       </div>
+       
+       <div class="setting_sidebar">
+           <hr>
+           <p style="color:white; text-align:center;font-size: 25px;padding-top: 20px;">setting</p>
+           
+    
+       </div>
+       
+    </div> 
+
+
+    <div class="display">
+        <div class="chatbox">
+            <div class="chat-header">Chatbox</div>
+            <div class="chat-body" id="chatBody"></div>
+            
+        </div>
+        
+
+    </div>
+</body>
+</html>
+
 
 <html>
 
 
 <style>
-
-    .greet_div{
-        position: absolute;
-        top: 0px;
-        left:0px;
-        bottom: 0px;
-        width: 350px;
-        background-color: #0f0f0f;
-    }
-
-    .button_sidebar{
-        padding-top: 10px;
-        text-align: center;
-
-    }
-
-    .plan_with_ai{
-        width: 300px;
-        height: 80px;
-        border-radius: 15px;
-        font-size: 25px;
-        background-color: #333536;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-
-    .your_todo{
-        width: 300px;
-        height: 80px;
-        border-radius: 15px;
-        font-size: 25px;
-        background-color: #333536;
-        border: none;
-        color: white;
-        cursor: pointer;
-        margin: 10px 0; 
-    }
-
-    .setting_sidebar{
-        position: absolute;
-        top: 700px;
-        left:0px;
-        bottom: 0px;
-        width: 350px;
-     
-    }
-
-    .chat{
-        position: absolute;
-        top: 700px;
-        left:350px;
-        bottom: 0px;
-        right: 0px;
-        background-color: green;
-    }
-
-    .display{
-        position: absolute;
-        top: 0px;
-        left:350px;
-        bottom: 120px;
-        right: 0px;
-        background-color: pink;
-    }
 
 
 
@@ -77,48 +65,18 @@
 <head>
 
 
-
-
-
- <div class="greet_div">
-    <h1 style="color: white; padding-left: 30px;"> &#x1F44B; Hello , name</h1>
-
-    <p style="color:white; padding-left: 30px; size: 10px;">Welcome to task add</p>
-
-    <div class="button_sidebar">
-        <div><button class="plan_with_ai">Plan with AI</button></div>
-        <div><button class="your_todo">Your to do</button></div>
-    </div>
+   
     
-    <div class="setting_sidebar">
-        <hr>
-        <p style="color:white; text-align:center;font-size: 25px;padding-top: 20px;">setting</p>
-        
-
-    </div>
     
- </div> 
-
-
-
-
-
-
-
-
+    
+    
+    
+    
 </head>
 <body>
-
-
-    <div class="chat">
-        <p>hello</p>
-    </div>
-
-
-
-    <div class="display">
-        <p>display</p>
-    </div>
+    
+    
+    
 
 
 
