@@ -10,6 +10,12 @@ def extract_sentences(input_list):
                 extracted_sentences.append(line[3:].strip())
     return extracted_sentences
 
+def save_tasks_to_file(tasks_list, file_name):
+    with open(file_name, "w") as file:
+        for task in tasks_list:
+            file.write(f"{task}\n")
+        file.write("\n")
+
 def main():
     input_data = [
         "Hello there\n- This is a test\n1. Example with numbers\n2. Another example\n- Final dash test",
@@ -24,6 +30,8 @@ def main():
 
     result = extract_sentences(input_data)
     print(result)
+    output_file = "tasks_output.txt"
+    save_tasks_to_file(result, output_file)
 
 if __name__ == "__main__":
     main()
