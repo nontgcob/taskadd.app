@@ -1,0 +1,21 @@
+todolist
+│
+|__index.html
+|
+|
+├── templates/                         
+│   ├── signup.html          
+│   ├── login.html           
+│   ├── chat.html            
+│   ├── todo.html            
+│   └── settings.html        
+│                 
+│── css/
+│      └── style.css        
+│── js/
+│      └── script.js        
+│__ images/
+│
+├── app.py                     
+├── requirements.txt          
+└── README.md               
