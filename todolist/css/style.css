@@ -1,10 +1,28 @@
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.Hello {
+    /* position: absolute; */
+    /* position: relative; */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .greet_div{
-    position: fixed;
+    /* position: fixed;
     top: 0px;
     left:0px;
-    bottom: 0px;
+    bottom: 0px; */
     width: 350px;
     background-color: #0f0f0f;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .button_sidebar{
@@ -37,22 +55,27 @@
 }
 
 .setting_sidebar{
-    position: absolute;
+    /* position: absolute;
     top: 700px;
     left:0px;
     bottom: 0px;
-    width: 350px;
+    width: 350px; */
  
+    /* margin-top: auto; */
 }
 
 .chat{
-    position: fixed;
+    /* position: fixed;
     top: 700px;
     left:350px;
     bottom: 0px;
     right: 0px;
     
-    z-index: 9999;
+    z-index: 9999; */
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 .display{
@@ -81,7 +104,7 @@
 
 
 .chatbox {
-    width: 1150px;
+    /* width: 1150px; */
     height: 630px;
     display: flex;
     flex-direction: column;
@@ -90,13 +113,6 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
-    /* Positioning for the top */
-    position: fixed; /* Fix the position on the screen */
-    top: 0; /* Align to the top of the screen */
-    left: 63%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    z-index: 1000; /* Ensure it’s above other elements */
 }
 
 .chat-header {
@@ -157,4 +173,5 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         max-width: 75%;
     }
+
 
